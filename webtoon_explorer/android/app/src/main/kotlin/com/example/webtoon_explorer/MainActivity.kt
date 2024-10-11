@@ -1,4 +1,4 @@
-package com.example.webtoon_explorer
+package com.naveen.toongala
 
 import io.flutter.embedding.android.FlutterActivity
 
