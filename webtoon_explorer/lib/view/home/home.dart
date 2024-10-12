@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+
+import 'package:webtoon_explorer/controller/favorite_controller.dart';
 import 'package:webtoon_explorer/controller/home_page_controller.dart';
+import 'package:webtoon_explorer/view/home/widget/home_app_bar.dart';
 import 'package:webtoon_explorer/view/home/widget/section.dart';
 
 class Home extends StatefulWidget {
@@ -18,6 +21,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     _homePageController = Get.put(HomePageController());
+    Get.find<FavoriteController>().loadFavorites();
     _homePageController.fetchData();
   }
 
@@ -25,21 +29,37 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: GetX<HomePageController>(builder: (controller) {
-        if (controller.isLoading.value) {
-          return Center(
-            child: Lottie.asset("assets/animation/loader.json"),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   shadowColor: Colors.transparent,
+      //   elevation: 0,
+      //   surfaceTintColor: Colors.transparent,
+      //   title: Text("Toon Gala", style: AppTypography.heading1),
+      // ),
+      body: GetX<HomePageController>(
+        builder: (controller) {
+          if (controller.isLoading.value) {
+            return Center(
+              child: Lottie.asset("assets/animation/loader.json"),
+            );
+          }
+          return ListView.builder(
+            shrinkWrap: true,
+            itemCount: controller.genres.length + 2,
+            itemBuilder: (context, index) {
+              if (index == 0) {
+                return const HomeAppBar();
+              }
+              if (index == 1) {
+                return const PapularSection();
+              }
+              return Section(
+                title: controller.genres[index - 2].capitalize!,
+              );
+            },
           );
-        }
-        return ListView.builder(
-          shrinkWrap: true,
-          itemCount: controller.genres.length,
-          itemBuilder: (context, index) => Section(
-            title: controller.genres[index].capitalize!,
-            mangaData: controller.manga[index],
-          ),
-        );
-      }),
+        },
+      ),
     );
   }
 }

@@ -19,10 +19,12 @@ class HomePageController extends GetxController {
         genre: "Romance",
         category: "popular",
         description:
-            "Gwen is a kind and passionate young woman with a tragic backstory. Her mother died when she was young, and her stepmother and stepsister treated her even worse with the demise of her father. Before dying, her father suggests she go on a cruise vacation with her best friend when her partner broke up with her to focus on his career instead. On the vacation, she meets Arthur, a handsome but lonely young man. Things escalate between them when they share their unfortunate fates. They end up hooking up, but Gwen runs away, afraid of the outcome. Fate brings them 2 years later, and they end up in a legal fight when Arthur finds out about his and Gwen's child. Read Hello Baby to learn whether they can solve their differences.",
+            "Gwen is a kind and passionate young woman with a tragic backstory. Her mother died when she was young, and her stepmother and stepsister treated her even worse with the demise of her father. Before dying, her father suggests she go on a cruise vacation with her best friend when her partner broke up with her to focus on his career instead. On the vacation, she meets Arthur, a handsome but lonely young man. Things escalate between them when they share their unfortunate fates. They end up hooking up, but Gwen runs away, afraid of the outcome| Fate brings them 2 years later, and they end up in a legal fight when Arthur finds out about his and Gwen's child. Read Hello Baby to learn whether they can solve their differences.",
         rating: "4.5",
         image:
             "https://animemangatoon.com/wp-content/uploads/2024/09/Screenshot-2024-09-16-123040-750x375.webp",
+        banner:
+            "https://animemangatoon.com/wp-content/uploads/2024/09/Screenshot-2024-09-16-133040-750x375.webp",
       ),
       Manga(
         title: "The Alpha King's Claim",
@@ -166,8 +168,10 @@ class HomePageController extends GetxController {
       if (manga[i].category.toLowerCase().trim() == "popular") {
         papular_tmp += [manga[i]];
       }
-      if (!genre_tmp.contains(manga[i].genre.toLowerCase().trim())) {
-        genre_tmp += [manga[i].genre.toLowerCase().trim()];
+      for (int j = 0; j < manga[i].genre.length; j++) {
+        if (!genre_tmp.contains(manga[i].genre[j])) {
+          genre_tmp.add(manga[i].genre[j]);
+        }
       }
     }
 
@@ -175,5 +179,17 @@ class HomePageController extends GetxController {
     genres.value = genre_tmp;
 
     isLoading.value = false;
+  }
+
+  List<Manga> getGenreData(String genre) {
+    List<Manga> list = [];
+
+    for (var i in manga) {
+      if (i.containsGenre(genre.toLowerCase())) {
+        list.add(i);
+      }
+    }
+
+    return list;
   }
 }

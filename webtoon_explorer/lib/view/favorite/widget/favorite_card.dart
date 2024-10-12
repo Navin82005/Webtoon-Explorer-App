@@ -1,33 +1,33 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:webtoon_explorer/controller/favorite_controller.dart';
 import 'package:webtoon_explorer/core/conf/app_colors.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
 import 'package:webtoon_explorer/model/manga.dart';
 import 'package:webtoon_explorer/view/detail/detail.dart';
+import 'package:webtoon_explorer/view/detail/widget/genre_section.dart';
 import 'package:webtoon_explorer/view/widget/image_widget.dart';
+import 'package:webtoon_explorer/view/widget/primary_button.dart';
 import 'package:webtoon_explorer/view/widget/rating.dart';
 
-class ViewCard extends StatelessWidget {
+class FavoriteCard extends StatelessWidget {
   final Manga mangaData;
   final String genre;
-  const ViewCard({super.key, required this.mangaData, required this.genre});
+  const FavoriteCard({super.key, required this.mangaData, required this.genre});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 16),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(18),
-            child: GestureDetector(
-              onTap: () => Get.to(
-                () => Detail(mangaData: mangaData, genre: genre),
-                // transition: Transition.downToUp,
-              ),
+    return GestureDetector(
+      onTap: () => Get.to(
+        () => Detail(mangaData: mangaData, genre: genre),
+        // transition: Transition.downToUp,
+      ),
+      child: Container(
+        margin: const EdgeInsets.only(right: 16),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(18),
               child: Stack(
                 children: [
                   Hero(
@@ -81,25 +81,54 @@ class ViewCard extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: 110,
-                child: Text(
-                  mangaData.title,
-                  style: AppTypography.body1,
-                  overflow: TextOverflow.ellipsis,
-                ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    mangaData.title,
+                    style: AppTypography.heading2,
+                    overflow: TextOverflow.clip,
+                  ),
+                  const SizedBox(height: 4),
+                  Rating(
+                    rating: mangaData.rating,
+                    style: AppTypography.subHeading1,
+                  ),
+                  const SizedBox(height: 8),
+                  GenreSection(genres: mangaData.genre, disableHeading: true),
+                  const SizedBox(height: 12),
+                  PrimaryButton(
+                    width: Get.width,
+                    // height: ,
+                    style: AppTypography.body1,
+                    onTap: () => print("Opening ${mangaData.title}"),
+                    text: "Read Manhwa",
+                  ),
+                ],
               ),
-              // const SizedBox(width: 20),
-              Rating(rating: mangaData.rating, style: AppTypography.body1),
-            ],
-          )
-        ],
+            ),
+
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     SizedBox(
+            //       width: 110,
+            //       child: Text(
+            //         mangaData.title,
+            //         style: AppTypography.body1,
+            //         overflow: TextOverflow.ellipsis,
+            //       ),
+            //     ),
+            //     // const SizedBox(width: 20),
+            //     Rating(rating: mangaData.rating, style: AppTypography.body1),
+            //   ],
+            // )
+          ],
+        ),
       ),
     );
+    ;
   }
 }

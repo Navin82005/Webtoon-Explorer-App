@@ -1,36 +1,81 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
-import 'package:webtoon_explorer/model/manga.dart';
-import 'package:webtoon_explorer/view/home/widget/view_card.dart';
+import 'package:webtoon_explorer/core/conf/app_colors.dart';
+import 'package:webtoon_explorer/view/home/widget/render_section.dart';
 
 class Section extends StatelessWidget {
-  final String title;
-  final Manga mangaData;
-  const Section({super.key, required this.title, required this.mangaData});
+  final String? title;
+  const Section({super.key, this.title});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 360,
       margin: const EdgeInsets.only(left: 24),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: AppTypography.heading2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(title!, style: AppTypography.heading2),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "See All",
+                  style: AppTypography.body1.copyWith(
+                    color: AppColors.secondaryForeground,
+                  ),
+                ),
+              ),
+            ],
+          ),
           const SizedBox(height: 16),
           Expanded(
-            child: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: [
-                ViewCard(mangaData: mangaData),
-                ViewCard(mangaData: mangaData),
-                ViewCard(mangaData: mangaData),
-              ],
+            child: RenderSection(
+              genre: title!,
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class PapularSection extends StatelessWidget {
+  const PapularSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 350,
+      margin: const EdgeInsets.only(left: 24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Popular", style: AppTypography.heading2),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "See All",
+                  style: AppTypography.body1.copyWith(
+                    color: AppColors.secondaryForeground,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          const Expanded(
+            child: RenderPapularSection(),
           ),
         ],
       ),
