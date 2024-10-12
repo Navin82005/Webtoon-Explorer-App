@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:webtoon_explorer/controller/favorite_controller.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
 import 'package:webtoon_explorer/view/favorite/widget/favorite_card.dart';
-import 'package:webtoon_explorer/view/home/widget/view_card.dart';
 
 class Favorite extends StatefulWidget {
   const Favorite({super.key});

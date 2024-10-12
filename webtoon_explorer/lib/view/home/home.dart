@@ -41,6 +41,8 @@ class _HomeState extends State<Home> {
           if (controller.isLoading.value) {
             return Center(
               child: Lottie.asset("assets/animation/loader.json"),
+              // child: Lottie.network(
+              // "https://lottie.host/cfdf3158-9f4e-41b1-84db-38436dbceeb1/fSm9RxHiNd.json"),
             );
           }
           return ListView.builder(

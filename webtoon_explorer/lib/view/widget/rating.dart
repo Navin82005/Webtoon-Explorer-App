@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:webtoon_explorer/core/conf/app_colors.dart';
-import 'package:webtoon_explorer/core/conf/app_typography.dart';
 
 class Rating extends StatelessWidget {
   final String rating;

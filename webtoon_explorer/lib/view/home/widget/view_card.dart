@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:webtoon_explorer/controller/favorite_controller.dart';
 import 'package:webtoon_explorer/core/conf/app_colors.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';

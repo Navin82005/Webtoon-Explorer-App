@@ -29,7 +29,7 @@ class RenderPapularSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Manga> data = Get.find<HomePageController>().papular.value;
+    final List<Manga> data = Get.find<HomePageController>().papular;
     return ListView.builder(
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
