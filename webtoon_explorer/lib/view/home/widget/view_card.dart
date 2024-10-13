@@ -11,7 +11,13 @@ import 'package:webtoon_explorer/view/widget/rating.dart';
 class ViewCard extends StatelessWidget {
   final Manga mangaData;
   final String genre;
-  const ViewCard({super.key, required this.mangaData, required this.genre});
+  final bool enableOverlay;
+  const ViewCard({
+    super.key,
+    required this.mangaData,
+    required this.genre,
+    this.enableOverlay = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +81,25 @@ class ViewCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
+                    )
+                  else if (enableOverlay)
+                    Positioned(
+                      bottom: 0,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            color: AppColors.primaryForeground,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(8))),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 12, top: 5, bottom: 5, right: 8),
+                          child: Text(
+                            genre.capitalize!,
+                            style: AppTypography.body1,
+                          ),
+                        ),
+                      ),
+                    )
                 ],
               ),
             ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webtoon_explorer/core/conf/app_colors.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
 
-class PrimaryButton extends StatelessWidget {
+class SecondaryButton extends StatelessWidget {
   final String? text;
   final TextStyle? style;
   final Color? color;
@@ -10,10 +10,10 @@ class PrimaryButton extends StatelessWidget {
   final VoidCallback? onTap;
   final double? height;
   final double? width;
-  final EdgeInsets? margin;
   final EdgeInsets? padding;
+  final bool? disableBorder;
 
-  const PrimaryButton({
+  const SecondaryButton({
     super.key,
     this.text,
     this.style,
@@ -22,29 +22,40 @@ class PrimaryButton extends StatelessWidget {
     this.onTap,
     this.height,
     this.width,
-    this.margin,
     this.padding,
+    this.disableBorder,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin,
       height: height,
       width: width,
-      decoration: BoxDecoration(
-        color: AppColors.primaryForeground,
-        borderRadius: BorderRadius.circular(8),
-      ),
+      padding:
+          padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+      decoration: (disableBorder ?? false) == false
+          ? BoxDecoration(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                width: 1,
+                color: color ?? AppColors.placeholderColor,
+              ),
+            )
+          : null,
       child: TextButton(
         style: const ButtonStyle(
           padding: WidgetStatePropertyAll<EdgeInsets>(EdgeInsets.zero),
         ),
         onPressed: onTap,
-        child: Padding(
-          padding: padding ?? const EdgeInsets.symmetric(horizontal: 8),
-          child: child ?? Text(text!, style: style ?? AppTypography.heading2),
-        ),
+        child: child ??
+            Text(
+              text!,
+              style: style ??
+                  AppTypography.heading2.copyWith(
+                    color: AppColors.placeholderColor,
+                  ),
+            ),
       ),
     );
   }

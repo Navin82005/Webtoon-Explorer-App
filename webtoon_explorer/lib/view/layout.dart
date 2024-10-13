@@ -36,6 +36,7 @@ class _LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
     return GetX<NavigationController>(builder: (controller) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(toolbarHeight: 5, backgroundColor: Colors.transparent),
         backgroundColor: AppColors.primaryBackground,
         body: controller.pages[controller.currentPage.value],

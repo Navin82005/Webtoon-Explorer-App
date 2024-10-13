@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
+import 'package:webtoon_explorer/view/widget/loader_widget.dart';
 
 class ImageWidget extends StatelessWidget {
   final String image;
@@ -16,11 +16,7 @@ class ImageWidget extends StatelessWidget {
       height: height ?? 250,
       imageUrl: image,
       fit: BoxFit.cover,
-      placeholder: (context, url) => Center(
-        child: Lottie.asset("assets/animation/loader.json"),
-        // child: Lottie.network(
-        //     "https://lottie.host/cfdf3158-9f4e-41b1-84db-38436dbceeb1/fSm9RxHiNd.json"),
-      ),
+      placeholder: (context, url) => const LoaderWidget(),
       errorWidget: (context, url, error) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

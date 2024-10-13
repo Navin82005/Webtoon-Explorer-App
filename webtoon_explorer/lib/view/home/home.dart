@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 import 'package:webtoon_explorer/controller/favorite_controller.dart';
 import 'package:webtoon_explorer/controller/home_page_controller.dart';
 import 'package:webtoon_explorer/view/home/widget/home_app_bar.dart';
 import 'package:webtoon_explorer/view/home/widget/section.dart';
+import 'package:webtoon_explorer/view/widget/loader_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -39,11 +39,7 @@ class _HomeState extends State<Home> {
       body: GetX<HomePageController>(
         builder: (controller) {
           if (controller.isLoading.value) {
-            return Center(
-              child: Lottie.asset("assets/animation/loader.json"),
-              // child: Lottie.network(
-              // "https://lottie.host/cfdf3158-9f4e-41b1-84db-38436dbceeb1/fSm9RxHiNd.json"),
-            );
+            return const LoaderWidget();
           }
           return ListView.builder(
             shrinkWrap: true,

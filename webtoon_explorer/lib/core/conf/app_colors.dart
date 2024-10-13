@@ -8,4 +8,5 @@ class AppColors {
   static const Color secondaryBackground = Color(0xFF1d1b30);
 
   static const Color fontColor = Color(0xFFFFFFFF);
+  static const Color placeholderColor = Color(0xFF95949e);
 }

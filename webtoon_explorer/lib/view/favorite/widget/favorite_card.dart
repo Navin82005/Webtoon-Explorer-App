@@ -109,22 +109,6 @@ class FavoriteCard extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     SizedBox(
-            //       width: 110,
-            //       child: Text(
-            //         mangaData.title,
-            //         style: AppTypography.body1,
-            //         overflow: TextOverflow.ellipsis,
-            //       ),
-            //     ),
-            //     // const SizedBox(width: 20),
-            //     Rating(rating: mangaData.rating, style: AppTypography.body1),
-            //   ],
-            // )
           ],
         ),
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:webtoon_explorer/controller/navigation_controller.dart';
 import 'package:webtoon_explorer/core/conf/app_colors.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
 import 'package:webtoon_explorer/core/meta/app_data.dart';
@@ -20,7 +22,11 @@ class HomeAppBar extends StatelessWidget {
               color: AppColors.primaryForeground,
             ),
           ),
-          const Icon(Icons.search, color: AppColors.primaryForeground),
+          IconButton(
+            onPressed: () =>
+                Get.find<NavigationController>().setActivePageIndex(1),
+            icon: const Icon(Icons.search, color: AppColors.primaryForeground),
+          ),
         ],
       ),
     );
