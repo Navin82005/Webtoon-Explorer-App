@@ -1,4 +1,4 @@
-package com.naveen.toongala
+package com.naveen.toongaala
 
 import io.flutter.embedding.android.FlutterActivity
 
