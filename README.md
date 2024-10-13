@@ -82,5 +82,4 @@ For any inquiries or feedback, feel free to reach out:
 
 ---
 
-Explore the world of **Korean Manga** with **Toon Gaala** and save your favorites locally for endless entertainment!
-```
+Explore the world of **Manhwa** with **Toon Gaala** and save your favorites locally for endless entertainment!
