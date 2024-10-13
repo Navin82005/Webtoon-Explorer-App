@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:webtoon_explorer/core/conf/app_colors.dart';
 import 'package:webtoon_explorer/core/conf/app_typography.dart';
+import 'package:webtoon_explorer/core/meta/app_data.dart';
 import 'package:webtoon_explorer/view/layout.dart';
 import 'package:webtoon_explorer/view/widget/primary_button.dart';
 
@@ -23,7 +24,7 @@ class Onboarding extends StatelessWidget {
             Image.asset("assets/image/toon_gala.png"),
             const SizedBox(height: 12),
             Text(
-              "Welcome to Toon Gala",
+              "Welcome to ${AppData.AppName}",
               style: AppTypography.heading1.copyWith(
                 color: AppColors.primaryForeground,
                 fontSize: 24,

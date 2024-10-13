@@ -29,13 +29,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   shadowColor: Colors.transparent,
-      //   elevation: 0,
-      //   surfaceTintColor: Colors.transparent,
-      //   title: Text("Toon Gala", style: AppTypography.heading1),
-      // ),
       body: GetX<HomePageController>(
         builder: (controller) {
           return ListView.builder(
