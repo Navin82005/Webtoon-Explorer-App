@@ -64,7 +64,7 @@ Here are some screenshots demonstrating the app features:
 
 | Home Page                     | Manga List                     | Manga Details                | Favorites List               |
 | ------------------------------ | ------------------------------ | ---------------------------- | ---------------------------- |
-| ![Home Page](assets/image/toon_gala.png) | ![Manga List](assets/screenshot2.png) | ![Manga Details](assets/screenshot3.png) | ![Favorites](assets/screenshot4.png) |
+| ![Home Page](out/screen/home.png) | ![Manga List](assets/screenshot2.png) | ![Manga Details](assets/screenshot3.png) | ![Favorites](assets/screenshot4.png) |
 
 
 
