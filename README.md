@@ -62,9 +62,9 @@ This app uses **Hive** for local storage. Users can store their favorite mangas 
 
 Here are some screenshots demonstrating the app features:
 
-| Home Page                     | Manga List                     | Manga Details                | Favorites List               |
+| Home Page                     | Search Page                     | Manga Details                | Favorites List               |
 | ------------------------------ | ------------------------------ | ---------------------------- | ---------------------------- |
-| ![Home Page](out/screen/home.jpg) | ![Manga List](assets/screenshot2.png) | ![Manga Details](assets/screenshot3.png) | ![Favorites](assets/screenshot4.png) |
+| ![Home Page](out/screen/home.jpg) | ![Manga List](out/screen/search.jpg) | ![Manga Details](out/screen/detail.jpg) | ![Favorites](out/screen/favorite.jpg) |
 
 
 
