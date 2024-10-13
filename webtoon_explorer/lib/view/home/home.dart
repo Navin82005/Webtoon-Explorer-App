@@ -38,15 +38,23 @@ class _HomeState extends State<Home> {
       // ),
       body: GetX<HomePageController>(
         builder: (controller) {
-          if (controller.isLoading.value) {
-            return const LoaderWidget();
-          }
           return ListView.builder(
             shrinkWrap: true,
-            itemCount: controller.genres.length + 2,
+            itemCount:
+                controller.isLoading.value ? 2 : controller.genres.length + 2,
             itemBuilder: (context, index) {
               if (index == 0) {
                 return const HomeAppBar();
+              }
+              if (controller.isLoading.value) {
+                return SizedBox(
+                  height: Get.height / 1.25,
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [LoaderWidget()],
+                  ),
+                );
               }
               if (index == 1) {
                 return const PapularSection();
