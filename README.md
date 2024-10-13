@@ -65,7 +65,7 @@ Here are some screenshots demonstrating the app features:
 | Home Page                     | Search Page                     | Manga Details                | Favorites List               |
 | ------------------------------ | ------------------------------ | ---------------------------- | ---------------------------- |
 | ![Home Page](out/screen/home.jpg) | ![Searck Page](out/screen/search.jpg) | ![Manga Details](out/screen/detail.jpg) | ![Favorites](out/screen/favorite.jpg) |
-|![Loader](out/screen/loader.jpg)|![Filter Search](out/screen/filter.jpg)|Onboarding||
+|![Loader](out/screen/loader.jpg)|![Filter Search](out/screen/filter.jpg)|Onboarding ![Onboarding](out/screen/onboarding.jpg)||
 
 
 ## Contributing
