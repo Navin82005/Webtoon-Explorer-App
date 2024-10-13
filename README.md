@@ -58,6 +58,16 @@ Ensure you have the following installed:
 
 This app uses **Hive** for local storage. Users can store their favorite mangas locally for easy access, even offline. The storage is lightweight and fast, ensuring a seamless experience when managing your manga collection.
 
+## App Screenshots
+
+Here are some screenshots demonstrating the app features:
+
+| Home Page                     | Manga List                     | Manga Details                | Favorites List               |
+| ------------------------------ | ------------------------------ | ---------------------------- | ---------------------------- |
+| ![Home Page](assets/image/toon_gala.png) | ![Manga List](assets/screenshot2.png) | ![Manga Details](assets/screenshot3.png) | ![Favorites](assets/screenshot4.png) |
+
+
+
 ## Contributing
 
 If you'd like to contribute to **Toon Gaala**, please fork the repository and use a feature branch. Pull requests are warmly welcome!
