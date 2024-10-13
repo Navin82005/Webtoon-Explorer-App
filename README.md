@@ -17,11 +17,10 @@
 Ensure you have the following installed:
 - [Flutter](https://flutter.dev/docs/get-started/install) (for mobile development)
 - [Dart SDK](https://dart.dev/get-dart) (if not bundled with Flutter)
-- [Hive](https://pub.dev/packages/hive) (local NoSQL storage for saving user data like favorite mangas)
 
 ### Installation
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/toon-gaala.git
+   https://github.com/Navin82005/Webtoon-Explorer-App.git
