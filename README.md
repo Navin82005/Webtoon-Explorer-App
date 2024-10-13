@@ -24,3 +24,19 @@ Ensure you have the following installed:
 
    ```bash
    https://github.com/Navin82005/Webtoon-Explorer-App.git
+
+2. **Navigate into the project directory:**
+
+   ```bash
+   cd webtoon_explorer
+
+3. **Install dependencies:**
+
+   ```bash
+   flutter pub get
+
+4. **Run the app:**
+
+   ```bash
+   flutter run
+
